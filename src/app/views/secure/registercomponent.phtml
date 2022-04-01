@@ -1,0 +1,16 @@
+<h2>add role using this form</h2>
+
+<?php echo $this->tag->form("secure/registercomponent"); ?>
+
+    <p>
+        <label for="controller">Controller :</label>
+        <?php echo $this->tag->textField("controller"); ?>
+    </p>
+
+    <p>
+        <label for="action">action :</label>
+        <?php echo $this->tag->textField("action"); ?>
+    </p>
+    <p>
+        <?php echo $this->tag->submitButton('add component') ; ?>
+    </p>

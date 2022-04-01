@@ -1,0 +1,101 @@
+<?php
+
+
+
+echo PHP_EOL;
+
+    $hello = $this->locale->_('hello');
+    $ap = $this->locale->_('ap');
+    $ao = $this->locale->_('ao');
+    $pt = $this->locale->_('pt');
+    $ot = $this->locale->_('ot');
+    $setting = $this->locale->_('setting');
+    $add_role = $this->locale->_('add_role');
+    $add_comp = $this->locale->_('add_comp');
+    $all_comp = $this->locale->_('all_comp');
+    $add_user = $this->locale->_('add_user');
+    $lang = $this->locale->_('lang');
+    echo "<h1>".$hello."</h1>";
+ 
+echo $this->tag->linkTo(
+    [
+        'order',
+        $ap, 'class' => 'btn btn-primary m-2'
+    ]
+);
+//    }
+
+// }
+echo $this->tag->linkTo(
+    [
+        'product',
+        $ao, 'class' => 'btn btn-primary m-2'
+    ]
+);
+
+
+echo $this->tag->linkTo(
+    [
+        'order/display',
+        $ot, 'class' => 'btn btn-primary m-2'
+    ]
+);
+echo $this->tag->linkTo(
+    [
+        'product/display',
+        $pt, 'class' => 'btn btn-primary m-2'
+    ]
+);
+echo $this->tag->linkTo(
+    [
+        'setting',
+        $setting, 'class' => 'btn btn-primary m-2'
+    ]
+);
+echo $this->tag->linkTo(
+    [
+        'secure',
+        $add_role, 'class' => 'btn btn-primary m-2'
+    ]
+);
+echo $this->tag->linkTo(
+    [
+        'secure/registercomponent',
+        $add_comp, 'class' => 'btn btn-primary m-2'
+    ]
+);
+echo $this->tag->linkTo(
+    [
+        'secure/allowcomponent',
+        $all_comp, 'class' => 'btn btn-primary m-2'
+    ]
+);
+echo $this->tag->linkTo(
+    [
+        'secure/adduser',
+        $add_user, 'class' => 'btn btn-primary m-2'
+    ]
+); ?>
+<p>
+    <!-- <?php
+            echo $this->tag->select("lang", [
+                'english' => 'english',
+                'dutch' => 'dutch',
+                'hindi' => 'hindi'
+            ]); ?> -->
+<p class="para">
+    <label for="lang"><?php echo $lang ; ?></label>
+    <select name="lang" id="lang" onchange="myfunc()">
+        <option value="">none</option>
+        <option value="en" >english</option>
+        <option value="french">french</option>
+        <option value="hindi">hindi</option>
+    </select>
+</p>
+<script>
+    function myfunc() {
+        var val = document.getElementById('lang').value;
+        window.location.href = "http://localhost:8080/?locale=" + val + "";
+
+    }
+</script>

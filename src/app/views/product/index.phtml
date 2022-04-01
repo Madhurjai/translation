@@ -1,0 +1,32 @@
+<h2>add product using this form</h2>
+
+<?php echo $this->tag->form("product/register"); ?>
+
+    <p>
+        <label for="name">Name</label>
+        <?php echo $this->tag->textField("name"); ?>
+    </p>
+
+    <p>
+        <label for="description">Description</label>
+        <?php echo $this->tag->textArea("description"); ?>
+    </p>
+    <p>
+        <label for="tags">Tags</label>
+        <?php echo $this->tag->textField("tags"); ?>
+    </p>
+    <p>
+        <label for="price">Price</label>
+        <?php echo $this->tag->textField("price"); ?>
+    </p>
+    <p>
+        <label for="stock">stock</label>
+        <?php echo $this->tag->textField("stock"); ?>
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton("addproduct"); ?>
+    </p>
+
+</form>
+<?php  echo $this->tag->linkTo(['/', 'home ' , "class" => 'btn btn-primary']); ?>

@@ -1,0 +1,29 @@
+<?php 
+
+if($products->count() > 0) {
+?>
+<table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr><th>name</th>
+            <th>description</th>
+            <th>tags</th>
+            <th>price</th>
+            <th>stock</th></tr></thead>
+
+            <tbody>
+<?php foreach($products as $product) { ?>
+   <tr><td><?php echo $product->name; ?></td>
+   <td><?php echo $product->description; ?></td>
+   <td><?php echo $product->tags; ?></td>
+   <td><?php echo $product->price;?></td>
+   <td><?php echo $product->stock;?></td>
+<!-- <td> <?php echo $this->tag->linkTo('index/delete/'.$user->id ,'delete');?></td>
+<td> <?php echo $this->tag->linkTo('signup/edit/'.$user->id ,'edit');?></td> -->
+</tr>
+   <?php } ?>
+
+</tbody>
+</table>
+<?php } 
+  echo $this->tag->linkTo(['/', 'home ' , "class" => 'btn btn-primary']); 
+?>

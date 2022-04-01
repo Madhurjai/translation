@@ -1,0 +1,32 @@
+<?php 
+
+if($orders->count() > 0) {
+?>
+<table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr><th>order id</th>
+            <th>custumer name</th>
+            <th>address</th>
+            <th>product</th>
+            <th>quantity</th>
+            <th>zipcode</th></tr></thead>
+
+            <tbody>
+<?php foreach($orders as $order) { ?>
+    
+   <tr><td><?php echo $order->order_id; ?></td>
+       <td><?php echo $order->custumer_name; ?></td>
+   <td><?php echo $order->address; ?></td>
+   <td><?php echo $order->product;?></td>
+   <td><?php echo $order->quantity;?></td>
+   <td><?php echo $order->zipcode;?></td>
+<!-- <td> <?php echo $this->tag->linkTo('index/delete/'.$user->id ,'delete');?></td>
+<td> <?php echo $this->tag->linkTo('signup/edit/'.$user->id ,'edit');?></td> -->
+</tr>
+   <?php } ?>
+
+</tbody>
+</table>
+<?php }
+  echo $this->tag->linkTo(['/', 'home ' , "class" => 'btn btn-primary']); 
+//  echo $this->tag->linkTo('order',' place order');

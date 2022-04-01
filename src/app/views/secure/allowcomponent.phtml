@@ -1,0 +1,25 @@
+<h2>add order using this form</h2>
+
+<?php echo $this->tag->form("secure/buildacl"); ?>
+
+   
+    <p>
+        <label for="role">role</label>
+        <?php echo $this->tag->select(["role", Roles::find(), 'using' => ['role','role'] ]); ?>
+    </p>
+    <?php 
+    $data = Components::find() ;
+    foreach($data as $k =>$v) {
+        echo '
+        <input type="checkbox" id="vehicle1" name="component[]" value="'.$v->com_id.'">
+        <label for="vehicle1">'.$v->controller.' '.$v->action.'</label><br>' ;
+        
+    }
+     ?>
+
+
+    <p>
+        <?php echo $this->tag->submitButton("allow component"); ?>
+    </p>
+
+</form>

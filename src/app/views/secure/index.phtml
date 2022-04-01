@@ -1,0 +1,11 @@
+<h2>add role using this form</h2>
+
+<?php echo $this->tag->form("secure/registerrole"); ?>
+
+    <p>
+        <label for="role">Role :</label>
+        <?php echo $this->tag->textField("role"); ?>
+    </p>
+    <p>
+        <?php echo $this->tag->submitButton('add role') ; ?>
+    </p>

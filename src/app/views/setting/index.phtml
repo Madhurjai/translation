@@ -1,0 +1,28 @@
+<?php
+echo "<h1>setting </h1>" ;
+echo $this->tag->form("setting/add"); ?>
+
+<p>
+    <label for="title">Title optimization</label>
+    <?php echo $this->tag->select('tags', [
+        'tags' => 'with tags',
+        'not_tags' => 'without tags'
+    ]); ?>
+</p>
+<p>
+<label for = 'price'>default price :</label>
+<?php echo $this->tag->textfield('price'); ?>
+</p>
+<p>
+<label for = 'stock'>default stock :</label>
+<?php echo $this->tag->textfield('stock'); ?>
+</p>
+<p>
+<label for = 'zipcode'>default zipcode :</label>
+<?php echo $this->tag->textfield('zipcode'); ?>
+</p>
+<p>
+<?php echo $this->tag->submitButton('change setting') ;?>
+
+</p>
+<?php  echo $this->tag->linkTo(['/', 'home ' , "class" => 'btn btn-primary']); ?>
